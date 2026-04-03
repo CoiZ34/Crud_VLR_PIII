@@ -17,14 +17,14 @@ namespace Proyecto_Web_VLR.Models
     {
         [Display(Name = "#")]
         public int ID { get; set; }
-        [Display(Name = "Tag del jugador")]
+        [Display(Name = "Player Tag")]
         public string TagName { get; set; }
 
-        [Display(Name = "Equipo actual del jugador")]
+        [Display(Name = "Team")]
         public string Equipo { get; set; }
-        [Display(Name = "Estatus del jugador")]
+        [Display(Name = "Player Status")]
         public string Estado { get; set; }
-        [Display(Name = "Juego del jugador")]
+        [Display(Name = "Game")]
         public string Juego { get; set; }
     
 
