@@ -25,7 +25,7 @@ namespace Proyecto_Web_VLR.Controllers
 
             using (DbModels context = new DbModels())
             {
-                return View(context.Player.Where(x=>x.ID == id));
+                return View(context.Player.Where(x=>x.ID == id).FirstOrDefault());
             }
             
         }

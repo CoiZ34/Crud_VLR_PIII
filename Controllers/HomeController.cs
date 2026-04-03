@@ -22,7 +22,7 @@ namespace Proyecto_Web_VLR.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "";
 
             return View();
         }
