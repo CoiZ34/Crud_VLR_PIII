@@ -1,0 +1,56 @@
+﻿@model Proyecto_Web_VLR.Models.Player
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>¿Quieres eliminar este jugador?</h3>
+<div>
+    <h4>Player</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TagName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TagName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Equipo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Equipo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Juego)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Juego)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
