@@ -12,12 +12,10 @@ namespace Proyecto_Web_VLR.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Player
+    public partial class login
     {
-        public int ID { get; set; }
-        public string TagName { get; set; }
-        public string Equipo { get; set; }
-        public string Estado { get; set; }
-        public string Juego { get; set; }
+        public int ID_Login { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
     }
 }

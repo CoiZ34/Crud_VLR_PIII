@@ -7,6 +7,8 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
+
+
 <body>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
         <div class="container">
@@ -23,6 +25,8 @@
                 </ul>
             </div>
         </div>
+
+
     </nav>
     <div class="container body-content">
         @RenderBody()
@@ -35,5 +39,16 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
+
+    <form method="post" action="/Login/Logout" style="position: fixed; top: 300px; right: 50px;">
+         <button id="btnLogout" type="submit" style="background-color: red; color: white; padding: 10px 12px;">
+             Cerrar sesión
+         </button>
+     </form> 
+    <!-- Este codigo me da problemas con el redireccionamiento, creo que es porque las vistas no conectan bien con el googleforms.-->
+
+    
+
 </body>
 </html>

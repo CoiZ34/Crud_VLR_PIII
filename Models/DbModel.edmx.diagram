@@ -6,6 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="6c3c2836b7184700a307476d57278242" Name="Diagram1">
         <EntityTypeShape EntityType="Proyecto_VLRModel.Player" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Proyecto_VLRModel.login" Width="1.5" PointX="3.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

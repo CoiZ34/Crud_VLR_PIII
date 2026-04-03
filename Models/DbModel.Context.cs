@@ -26,5 +26,6 @@ namespace Proyecto_Web_VLR.Models
         }
     
         public DbSet<Player> Player { get; set; }
+        public DbSet<login> login { get; set; }
     }
 }

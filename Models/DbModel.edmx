@@ -4,7 +4,15 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Proyecto_VLRModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Proyecto_VLRModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="login">
+          <Key>
+            <PropertyRef Name="ID_Login" />
+          </Key>
+          <Property Name="ID_Login" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="Player">
           <Key>
             <PropertyRef Name="ID" />
@@ -16,10 +24,10 @@
           <Property Name="Juego" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="Proyecto_VLRModelStoreContainer">
+          <EntitySet Name="login" EntityType="Self.login" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Player" EntityType="Self.Player" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Proyecto_VLRModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -35,7 +43,16 @@
         </EntityType>
         <EntityContainer Name="DbModels" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Player" EntityType="Self.Player" />
+          <EntitySet Name="login" EntityType="Proyecto_VLRModel.login" />
         </EntityContainer>
+        <EntityType Name="login">
+          <Key>
+            <PropertyRef Name="ID_Login" />
+          </Key>
+          <Property Name="ID_Login" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -50,6 +67,15 @@
                 <ScalarProperty Name="Equipo" ColumnName="Equipo" />
                 <ScalarProperty Name="Estado" ColumnName="Estado" />
                 <ScalarProperty Name="Juego" ColumnName="Juego" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="login">
+            <EntityTypeMapping TypeName="Proyecto_VLRModel.login">
+              <MappingFragment StoreEntitySet="login">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="ID_Login" ColumnName="ID_Login" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
